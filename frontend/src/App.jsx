@@ -1,14 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import { Button } from "@/components/ui/button"
+import React from 'react'
+import {Route, Routes } from 'react-router-dom'
+import HomePage from './pages/HomePage'
+import ProfilePage from './pages/ProfilePage'
+import LoginPage from './pages/LoginPage'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <div className="flex min-h-svh flex-col items-center justify-center">
-      <Button>Click me</Button>
+    <div>
+      <Routes>
+        <Route path='/' element = {<HomePage/>}/>
+        <Route path='/login' element = {<LoginPage/>}/>
+        <Route path='/profile' element = {<ProfilePage/>}/>
+
+      </Routes>
     </div>
   )
 }
